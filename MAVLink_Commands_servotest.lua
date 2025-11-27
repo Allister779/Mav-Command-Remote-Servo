@@ -22,7 +22,7 @@ local MAV_CMD_DO_SET_SERVO = 183
 
 -- Block AP parsing user1 so we can deal with it in the script
 -- Prevents "unsupported" ack
-    -- mavlink:block_command(MAV_CMD_WAYPOINT_USER_1)
+-- mavlink:block_command(MAV_CMD_WAYPOINT_USER_1)
 
 
 -- Send a mavlink command when the flight mode is changed.
