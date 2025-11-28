@@ -335,17 +335,18 @@ function update()
     --         end
     --     end
     -- until msg == nil
-     -- consume all available mavlink messages
-    local payload_update_received = false
-    local msg
-    repeat
-        msg, _ = mavlink:receive_chan()
-        if (msg ~= nil) then
-            if msg.msgid == GLOBAL_POSITION_INT_ID then
-                payload_update_received = handle_global_position_int(msg)
-            end
-        end
-    until msg == nil
+    
+    -- -- consume all available mavlink messages  -- Marwan's AI version.
+    -- local payload_update_received = false
+    -- local msg
+    -- repeat
+    --     msg, _ = mavlink:receive_chan()
+    --     if (msg ~= nil) then
+    --         if msg.msgid == GLOBAL_POSITION_INT_ID then
+    --             payload_update_received = handle_global_position_int(msg)
+    --         end
+    --     end
+    -- until msg == nil
 
     -- warn user on loss of recovery of telemetry from payload
     local payload_timeout = millis() - payload_loc_update_ms > PAYLOAD_UPDATE_TIMEOUT_MS
